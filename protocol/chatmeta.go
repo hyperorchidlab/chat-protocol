@@ -3,7 +3,7 @@ package protocol
 import "encoding/json"
 
 const (
-	AddFriend int32 = iota
+	AddFriend int = iota
 	DelFriend
 	AddGroup
 	DelGroup
@@ -33,7 +33,7 @@ type SignPack struct {
 type UserCommand struct {
 	Op int				`json:"op"`
 	SP SignPack			`json:"sp"`
-	CipherTxt []byte 	`json:"cipher_txt"`
+	CipherTxt string 	`json:"cipher_txt"`
 }
 
 func NewUserCommand(op int) *UserCommand  {
@@ -47,5 +47,5 @@ func NewUserCommand(op int) *UserCommand  {
 type UCReply struct {
 	OP int
 	ResultCode int  	`json:"result_code"`
-	CipherTxt []byte    `json:"cipher_txt"`
+	CipherTxt  string    `json:"cipher_txt"`
 }
