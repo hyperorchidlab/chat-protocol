@@ -5,38 +5,38 @@ import "encoding/json"
 const (
 	AddFriend int = iota
 	DelFriend
+	ListFriend
 	AddGroup
 	DelGroup
+	ChgGroup
+	ListGroupMbr
 	JoinGroup
 	QuitGroup
 )
 
-
 type UserSignText struct {
-	AliasName string			`json:"alias_name"`
-	CPubKey string				`json:"c_pub_key"`
-	SPubKey string				`json:"s_pub_key"`
-	ExpireTime int64			`json:"expire_time"`
+	AliasName  string `json:"alias_name"`
+	CPubKey    string `json:"c_pub_key"`
+	SPubKey    string `json:"s_pub_key"`
+	ExpireTime int64  `json:"expire_time"`
 }
 
-func (ust *UserSignText)ForSig() ([]byte,error)  {
+func (ust *UserSignText) ForSig() ([]byte, error) {
 	return json.Marshal(*ust)
 }
 
-
 type SignPack struct {
-	Sign string					`json:"sign"`
-	SignText UserSignText		`json:"sign_text"`
+	Sign     string       `json:"sign"`
+	SignText UserSignText `json:"sign_text"`
 }
-
 
 type UserCommand struct {
-	Op int				`json:"op"`
-	SP SignPack			`json:"sp"`
-	CipherTxt string 	`json:"cipher_txt"`
+	Op        int      `json:"op"`
+	SP        SignPack `json:"sp"`
+	CipherTxt string   `json:"cipher_txt"`
 }
 
-func NewUserCommand(op int) *UserCommand  {
+func NewUserCommand(op int) *UserCommand {
 	uc := &UserCommand{}
 
 	uc.Op = op
@@ -45,7 +45,7 @@ func NewUserCommand(op int) *UserCommand  {
 }
 
 type UCReply struct {
-	OP int
-	ResultCode int  	`json:"result_code"`
-	CipherTxt  string    `json:"cipher_txt"`
+	OP         int
+	ResultCode int    `json:"result_code"`
+	CipherTxt  string `json:"cipher_txt"`
 }

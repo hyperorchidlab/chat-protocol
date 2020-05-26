@@ -7,7 +7,7 @@ import (
 
 const (
 	AddrPrefix = "BC"
-	AddrIDLen = 45
+	AddrIDLen  = 45
 )
 
 type ChatAddress string
