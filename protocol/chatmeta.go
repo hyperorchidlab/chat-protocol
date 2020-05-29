@@ -5,6 +5,8 @@ import "encoding/json"
 const (
 	AddFriend int = iota
 	DelFriend
+	ListFriendSummary
+	ListGroupSummary
 	ListFriend
 	AddGroup
 	DelGroup

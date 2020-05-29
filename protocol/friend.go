@@ -30,12 +30,6 @@ type ListFriendReq struct {
 	SP SignPack `json:"sp"`
 }
 
-type ListFriendResp struct {
-	Op int        `json:"op"`
-	SP SignPack   `json:"sp"`
-	FL FriendList `json:"fl"`
-}
-
 type FriendDetails struct {
 	Alias      string `json:"alias"`
 	PubKey     string `json:"pub_key"`
@@ -53,6 +47,13 @@ type GroupDetails struct {
 }
 
 type FriendList struct {
-	FD []FriendDetails `json:"fd"`
-	GD []GroupDetails  `json:"gd"`
+	UpdateTime int64           `json:"update_time"`
+	FD         []FriendDetails `json:"fd"`
+	GD         []GroupDetails  `json:"gd"`
+}
+
+type ListFriendResp struct {
+	Op int        `json:"op"`
+	SP SignPack   `json:"sp"`
+	FL FriendList `json:"fl"`
 }
