@@ -3,7 +3,7 @@ package protocol
 type GroupMemberDesc struct {
 	GroupID  string `json:"group_id"`
 	Friend   string `json:"friend"`
-	SendTime string `json:"send_time"`
+	SendTime int64 `json:"send_time"`
 }
 
 type GroupMemberReq struct {
