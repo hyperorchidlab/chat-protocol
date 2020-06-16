@@ -12,6 +12,12 @@ const (
 	DelGroup
 	ChgGroup
 	ListGroupMbr
+	StoreGrpKeys
+	FetchGrpKeys
+	StoreP2pMsg
+	FetchP2pMsg
+	StoreGMsg
+	FetchGMsg
 	JoinGroup
 	QuitGroup
 )
