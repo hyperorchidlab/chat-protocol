@@ -1,8 +1,17 @@
 package protocol
 
+import "github.com/kprc/chat-protocol/address"
+
 type FriendDesc struct {
 	PeerPubKey string `json:"peer_pub_key"`
 	SendTime   int64  `json:"send_time"`
+}
+
+type FriendAddInfo struct {
+	Addr      address.ChatAddress `json:"addr"`
+	AliasName string              `json:"alias_name"`
+	AddTime   int64               `json:"add_time"`
+	Agree     int                 `json:"agree"`
 }
 
 type FriendReq struct {
@@ -20,9 +29,9 @@ const (
 )
 
 type FriendAddResp struct {
-	Op         int        `json:"op"`
-	ResultCode int        `json:"result_code"`
-	FD         FriendDesc `json:"fd"`
+	Op         int           `json:"op"`
+	ResultCode int           `json:"result_code"`
+	FAI        FriendAddInfo `json:"fd"`
 }
 
 type ListFriendReq struct {

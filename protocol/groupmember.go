@@ -1,9 +1,16 @@
 package protocol
 
+import (
+	"github.com/kprc/chat-protocol/address"
+	"github.com/kprc/chat-protocol/groupid"
+)
+
 type GroupMemberDesc struct {
 	GroupID  string `json:"group_id"`
 	Friend   string `json:"friend"`
 	SendTime int64  `json:"send_time"`
+	//Pubkeys  []string `json:"pubkeys"`
+	//GKeys    []string `json:"g_keys"`
 }
 
 type GroupMemberReq struct {
@@ -12,10 +19,18 @@ type GroupMemberReq struct {
 	GMD GroupMemberDesc `json:"gmd"`
 }
 
+type GroupMbrAddInfo struct {
+	GID        groupid.GrpID       `json:"gid"`
+	FriendName string              `json:"friend_name"`
+	FriendAddr address.ChatAddress `json:"friend_addr"`
+	Agree      int                 `json:"agree"`
+	JoinTime   int64               `json:"join_time"`
+}
+
 type GroupMemberResp struct {
 	Op         int             `json:"op"`
 	ResultCode int             `json:"result_code"`
-	GMD        GroupMemberDesc `json:"gmd"`
+	GMAI       GroupMbrAddInfo `json:"gmd"`
 }
 
 type ListGrpMbr struct {

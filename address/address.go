@@ -24,6 +24,11 @@ func (addr ChatAddress) ToPubKey() ed25519.PublicKey {
 	return base58.Decode(b58s)
 }
 
+func (addr ChatAddress) GetBytes() []byte {
+	pk := addr.ToPubKey()
+	return []byte(pk)
+}
+
 func (addr ChatAddress) IsValid() bool {
 	if len(addr) <= AddrIDLen {
 		return false
