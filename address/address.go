@@ -7,6 +7,7 @@ import (
 
 const (
 	AddrPrefix = "BC"
+	PrefixLen  = 2
 	AddrIDLen  = 45
 )
 
@@ -44,4 +45,13 @@ func (addr ChatAddress) IsValid() bool {
 
 func ToAddress(key []byte) ChatAddress {
 	return ChatAddress(AddrPrefix + base58.Encode(key))
+}
+
+func ToPKString(key []byte) string {
+	return base58.Encode(key)
+}
+
+func (addr ChatAddress) TrimPrefix() string {
+	addr1 := addr.String()
+	return addr1[PrefixLen:]
 }

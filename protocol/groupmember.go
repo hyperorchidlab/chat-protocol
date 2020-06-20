@@ -6,11 +6,11 @@ import (
 )
 
 type GroupMemberDesc struct {
-	GroupID  string `json:"group_id"`
-	Friend   string `json:"friend"`
-	SendTime int64  `json:"send_time"`
-	//Pubkeys  []string `json:"pubkeys"`
-	//GKeys    []string `json:"g_keys"`
+	GroupID  string   `json:"group_id"`
+	Friend   string   `json:"friend"`
+	SendTime int64    `json:"send_time"`
+	Pubkeys  []string `json:"pubkeys"`
+	GKeys    []string `json:"g_keys"`
 }
 
 type GroupMemberReq struct {
@@ -25,6 +25,7 @@ type GroupMbrAddInfo struct {
 	FriendAddr address.ChatAddress `json:"friend_addr"`
 	Agree      int                 `json:"agree"`
 	JoinTime   int64               `json:"join_time"`
+	GKeyHash   string              `json:"g_key_hash"`
 }
 
 type GroupMemberResp struct {
@@ -51,7 +52,11 @@ type GMember struct {
 }
 
 type GroupMbrDetailsList struct {
-	FD []GMember
+	Owner string    `json:"owner"`
+	Gkeys []string  `json:"gkeys"`
+	PKeys []string  `json:"pkeys"`
+	Hashk string    `json:"hashk"`
+	FD    []GMember `json:"fd"`
 }
 
 type ListGrpMbrsResp struct {
