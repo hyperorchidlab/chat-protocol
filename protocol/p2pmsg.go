@@ -18,8 +18,9 @@ type P2pMsgStoreResp struct {
 }
 
 type P2pMsgFetch struct {
-	Begin int `json:"begin"`
-	Count int `json:"count"`
+	Begin  int    `json:"begin"`
+	Count  int    `json:"count"`
+	PeerPk string `json:"peer_pk"`
 }
 
 type P2pMsgFetchReq struct {
@@ -29,7 +30,7 @@ type P2pMsgFetchReq struct {
 }
 
 type LP2pMsg struct {
-	PeerPk string `json:"ppk"`
+	PubKey string `json:"ppk"`
 	Msg    string `json:"msg"`
 	Cnt    int    `json:"cnt"`
 }

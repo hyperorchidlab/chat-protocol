@@ -1,11 +1,15 @@
 package protocol
 
-import "github.com/kprc/chat-protocol/groupid"
+import (
+	"github.com/kprc/chat-protocol/address"
+	"github.com/kprc/chat-protocol/groupid"
+)
 
 type GroupMsg struct {
-	Gid     groupid.GrpID `json:"gid"`
-	AesHash string        `json:"aes"`
-	Msg     string        `json:"msg"`
+	Gid     groupid.GrpID       `json:"gid"`
+	Speek   address.ChatAddress `json:"speek"`
+	AesHash string              `json:"aes"`
+	Msg     string              `json:"msg"`
 }
 
 type GroupMsgStoreReq struct {
@@ -32,9 +36,10 @@ type GMsgFetchReq struct {
 }
 
 type LGroupMsg struct {
-	AesHash string `json:"aes"`
-	Msg     string `json:"msg"`
-	Cnt     int    `json:"cnt"`
+	AesHash string              `json:"aes"`
+	Msg     string              `json:"msg"`
+	Speek   address.ChatAddress `json:"speek"`
+	Cnt     int                 `json:"cnt"`
 }
 
 type GMsgFetchContent struct {
