@@ -7,7 +7,7 @@ import (
 
 type GroupMsg struct {
 	Gid     groupid.GrpID       `json:"gid"`
-	Speek   address.ChatAddress `json:"speek"`
+	//Speek   address.ChatAddress `json:"speek"`
 	AesHash string              `json:"aes"`
 	Msg     string              `json:"msg"`
 }
