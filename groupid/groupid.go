@@ -7,7 +7,7 @@ import (
 
 const (
 	GrpIDPrefix   = "gc"
-	GrpIDLen      = 45
+	GrpIDLen      = 40
 	GrpIDBytesLen = 32
 )
 
