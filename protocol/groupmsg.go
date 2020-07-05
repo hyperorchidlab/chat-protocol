@@ -6,10 +6,10 @@ import (
 )
 
 type GroupMsg struct {
-	Gid     groupid.GrpID       `json:"gid"`
+	Gid groupid.GrpID `json:"gid"`
 	//Speek   address.ChatAddress `json:"speek"`
-	AesHash string              `json:"aes"`
-	Msg     string              `json:"msg"`
+	AesHash string `json:"aes"`
+	Msg     string `json:"msg"`
 }
 
 type GroupMsgStoreReq struct {
@@ -40,7 +40,7 @@ type LGroupMsg struct {
 	Msg     string              `json:"msg"`
 	Speek   address.ChatAddress `json:"speek"`
 	Cnt     int                 `json:"cnt"`
-	UCnt    int 				`json:"u_cnt"`
+	UCnt    int                 `json:"u_cnt"`
 }
 
 type GMsgFetchContent struct {
