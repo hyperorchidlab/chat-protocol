@@ -40,6 +40,7 @@ type LGroupMsg struct {
 	Msg     string              `json:"msg"`
 	Speek   address.ChatAddress `json:"speek"`
 	Cnt     int                 `json:"cnt"`
+	UCnt    int 				`json:"u_cnt"`
 }
 
 type GMsgFetchContent struct {
