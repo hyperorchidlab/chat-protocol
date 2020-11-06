@@ -1,8 +1,8 @@
 package protocol
 
 import (
-	"github.com/kprc/chat-protocol/address"
-	"github.com/kprc/chat-protocol/groupid"
+	"github.com/hyperorchidlab/chat-protocol/address"
+	"github.com/hyperorchidlab/chat-protocol/groupid"
 )
 
 type GroupMsg struct {

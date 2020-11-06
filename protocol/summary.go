@@ -1,6 +1,6 @@
 package protocol
 
-import "github.com/kprc/chat-protocol/groupid"
+import "github.com/hyperorchidlab/chat-protocol/groupid"
 
 type FriendSummary struct {
 	FriendUpdateTime int64 `json:"fut"`

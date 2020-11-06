@@ -1,6 +1,6 @@
 package protocol
 
-import "github.com/kprc/chat-protocol/address"
+import "github.com/hyperorchidlab/chat-protocol/address"
 
 type FriendDesc struct {
 	PeerPubKey string `json:"peer_pub_key"`
